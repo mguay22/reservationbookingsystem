@@ -1,4 +1,3 @@
-import { Prop } from '@nestjs/mongoose';
 import { Type } from 'class-transformer';
 import { IsDate, IsNotEmpty, IsString } from 'class-validator';
 
