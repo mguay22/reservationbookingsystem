@@ -9,7 +9,14 @@ export class ReservationsController {
 
   @Post()
   create(@Body() createReservationDto: CreateReservationDto) {
-    return this.reservationsService.create(createReservationDto);
+    const createReservationDtooCustom = {
+      startDate: new Date(),
+      endDate: new Date(),
+      placeId: createReservationDto.placeId,
+      invoiceId: createReservationDto.invoiceId,
+    };
+
+    return this.reservationsService.create(createReservationDtooCustom);
   }
 
   @Get()
